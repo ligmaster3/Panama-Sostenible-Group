@@ -1,0 +1,783 @@
+/* ============================================
+   SERVICIO DETALLE - ESTILOS PRINCIPALES
+   Archivo: assets/css/servicio-detalle.css
+   ============================================ */
+
+/* Layout Principal */
+.service-detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+/* ============================================
+   GALERÍA DE IMÁGENES
+   ============================================ */
+.service-gallery {
+    margin-bottom: 2rem;
+}
+
+.main-image {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.01);
+}
+
+.main-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.image-thumbnails {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #3498db #ecf0f1;
+}
+
+.image-thumbnails::-webkit-scrollbar {
+    height: 6px;
+}
+
+.image-thumbnails::-webkit-scrollbar-track {
+    background: #ecf0f1;
+    border-radius: 3px;
+}
+
+.image-thumbnails::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 3px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    flex-shrink: 0;
+}
+
+.thumbnail.active,
+.thumbnail:hover,
+.thumbnail:focus {
+    opacity: 1;
+    border-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* ============================================
+   HEADER DEL SERVICIO
+   ============================================ */
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.service-header h1 {
+    margin: 0;
+    color: #2c3e50;
+    flex: 1;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+.service-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.btn-favorite {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 0.7rem 1.3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.btn-favorite:hover {
+    border-color: #ff6b6b;
+    background: #fff5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+}
+
+.btn-favorite:focus {
+    outline: 2px solid #ff6b6b;
+    outline-offset: 2px;
+}
+
+.btn-favorite.active {
+    background: #ff6b6b;
+    border-color: #ff6b6b;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.btn-favorite:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================
+   METADATA DEL SERVICIO
+   ============================================ */
+.service-meta-detailed {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-meta-detailed > div {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.service-meta-detailed > div:last-child {
+    margin-bottom: 0;
+}
+
+.provider-info,
+.location-info,
+.rating-info {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.badge.sustainable {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: white;
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    box-shadow: 0 2px 6px rgba(39, 174, 96, 0.3);
+    display: inline-block;
+}
+
+/* ============================================
+   DESCRIPCIÓN Y CARACTERÍSTICAS
+   ============================================ */
+.service-description-detailed,
+.service-features,
+.service-reviews {
+    margin-bottom: 2.5rem;
+}
+
+.service-description-detailed h3,
+.service-features h3,
+.service-reviews h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.service-description-detailed p {
+    line-height: 1.8;
+    color: #555;
+    font-size: 1rem;
+}
+
+.features-list {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.feature-item {
+    background: white;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+}
+
+/* ============================================
+   RESEÑAS
+   ============================================ */
+.no-reviews {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.review-item {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.review-item:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.review-header strong {
+    color: #2c3e50;
+    font-size: 1.05rem;
+}
+
+.review-rating {
+    color: #f39c12;
+    font-size: 1.1rem;
+}
+
+.review-comment {
+    color: #555;
+    line-height: 1.7;
+    margin: 0.8rem 0;
+}
+
+.review-date {
+    color: #95a5a6;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   SIDEBAR DE RESERVA
+   ============================================ */
+.reservation-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.reservation-widget {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+}
+
+.price-widget {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.price-widget .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2ecc71;
+    display: block;
+    line-height: 1;
+}
+
+.price-widget .unit {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+/* ============================================
+   FORMULARIO DE RESERVA
+   ============================================ */
+.reservation-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.reservation-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.required {
+    color: #e74c3c;
+    margin-left: 2px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-control:invalid:not(:placeholder-shown) {
+    border-color: #e74c3c;
+}
+
+.form-text {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.char-counter {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: #95a5a6;
+    text-align: right;
+}
+
+/* ============================================
+   RESUMEN DE RESERVA
+   ============================================ */
+.reservation-summary {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.summary-item:last-of-type {
+    margin-bottom: 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    border-top: 2px solid #dee2e6;
+    padding-top: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-primary:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+.btn-block {
+    width: 100%;
+    display: block;
+}
+
+/* ============================================
+   WIDGET DE PROVEEDOR
+   ============================================ */
+.provider-widget {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.provider-widget h4 {
+    margin: 0 0 1.2rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.provider-card h5 {
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.provider-card p {
+    margin: 0.7rem 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.provider-card a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.provider-card a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.provider-card a:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ============================================
+   BREADCRUMB
+   ============================================ */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.breadcrumb a:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.breadcrumb span:not([aria-current]) {
+    color: #95a5a6;
+}
+
+.breadcrumb span[aria-current] {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* ============================================
+   NOTIFICACIONES
+   ============================================ */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10000;
+    min-width: 300px;
+    max-width: 500px;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.notification-message {
+    flex: 1;
+    color: #2c3e50;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #95a5a6;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.notification-close:hover {
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+
+.notification-close:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+.notification-success {
+    border-left: 4px solid #2ecc71;
+}
+
+.notification-success .notification-icon {
+    color: #2ecc71;
+}
+
+.notification-error {
+    border-left: 4px solid #e74c3c;
+}
+
+.notification-error .notification-icon {
+    color: #e74c3c;
+}
+
+.notification-warning {
+    border-left: 4px solid #f39c12;
+}
+
+.notification-warning .notification-icon {
+    color: #f39c12;
+}
+
+.notification-info {
+    border-left: 4px solid #3498db;
+}
+
+.notification-info .notification-icon {
+    color: #3498db;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1024px) {
+    .service-detail-layout {
+        grid-template-columns: 1fr 350px;
+        gap: 2rem;
+    }
+    
+    .main-image img {
+        height: 350px;
+    }
+}
+
+@media (max-width: 968px) {
+    .service-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .service-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .service-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .service-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .reservation-sidebar {
+        position: static;
+    }
+    
+    .main-image img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+    .service-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .service-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn-favorite,
+    .service-actions .btn {
+        width: 100%;
+    }
+    
+    .reservation-widget,
+    .provider-widget {
+        padding: 1.5rem;
+    }
+    
+    .price-widget .price {
+        font-size: 2rem;
+    }
+    
+    .notification {
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+    }
+    
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-detail-layout > * {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ============================================
+   MEJORAS DE IMPRESIÓN
+   ============================================ */
+@media print {
+    .service-actions,
+    .reservation-sidebar,
+    .notification,
+    .breadcrumb {
+        display: none;
+    }
+    
+    .service-detail-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-image img,
+    .review-item,
+    .feature-item {
+        break-inside: avoid;
+    }
+}
