@@ -265,10 +265,10 @@ if ($categoriaId) {
                         </div>
                         <div class="provider-badges">
                             <?php if($proveedor['verificado']): ?>
-                            <span class="badge verified" title="Proveedor verificado">✅ Verificado</span>
+                            <span class="badge verified" title="Proveedor verificado">Verificado</span>
                             <?php endif; ?>
                             <?php if($proveedor['sostenible']): ?>
-                            <span class="badge sustainable" title="Proveedor sostenible">♻️ Sostenible</span>
+                            <span class="badge sustainable" title="Proveedor sostenible">Sostenible</span>
                             <?php endif; ?>
                         </div>
                     </div>
