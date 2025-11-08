@@ -3,7 +3,7 @@ class Database {
     private $host = "localhost";
     private $db_name = "panama_sostenible_group";
     private $username = "root";
-    private $password = "informatica";
+    private $password = "";
     public $conn;
 
     public function getConnection() {

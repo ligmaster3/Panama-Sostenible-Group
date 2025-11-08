@@ -68,10 +68,12 @@ if (isLoggedIn()) {
 $stmt_relacionados = $conn->prepare("
     SELECT s.id, s.titulo, s.precio, s.imagenes, s.rating_promedio, s.total_resenas
     FROM servicios s 
-    WHERE s.categoria_id = :categoria_id AND s.id != :servicio_id AND s.activo = 1
+    JOIN proveedores p ON s.proveedor_id = p.id
+    WHERE p.categoria_id = :categoria_id AND s.id != :servicio_id AND s.disponibilidad = 1
     ORDER BY s.rating_promedio DESC 
     LIMIT 4
 ");
+
 $stmt_relacionados->bindParam(':categoria_id', $servicio['categoria_id'], PDO::PARAM_INT);
 $stmt_relacionados->bindParam(':servicio_id', $servicio_id, PDO::PARAM_INT);
 $stmt_relacionados->execute();
@@ -179,7 +181,16 @@ $servicios_relacionados = $stmt_relacionados->fetchAll();
                     <div class="service-features">
                         <h2>Características</h2>
                         <div class="features-list">
-                            <?php foreach($caracteristicas as $caracteristica): ?>
+                            <?php foreach($caracteristicas as $caracteristica): 
+                                // Convertir array/objeto a string si es necesario
+                                if (is_array($caracteristica)) {
+                                    $caracteristica = implode(', ', array_filter($caracteristica, function($item) {
+                                        return is_string($item) || is_numeric($item);
+                                    }));
+                                } elseif (!is_string($caracteristica) && !is_numeric($caracteristica)) {
+                                    $caracteristica = (string)$caracteristica;
+                                }
+                            ?>
                             <div class="feature-item">
                                 <span class="feature-icon">✅</span>
                                 <span class="feature-text"><?= htmlspecialchars($caracteristica) ?></span>

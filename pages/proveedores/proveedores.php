@@ -1,9 +1,9 @@
 <?php
 $pageTitle = "Proveedores Sostenibles";
 include '../../includes/header.php';
-include '../../includes/database.php';
 include '../../includes/functions.php';
 include '../../includes/auth.php';
+include '../../config/database.php';
 
 $database = new Database();
 $conn = $database->getConnection();
@@ -315,8 +315,8 @@ if ($categoriaId) {
                             <a href="proveedor-detalle.php?id=<?= $proveedor['id'] ?>" class="btn btn-primary btn-sm">
                                 Ver Perfil
                             </a>
-                            <a href="../servicios/servicios.php?proveedor=<?= $proveedor['id'] ?>"
-                                class="btn btn-outline btn-sm">
+                            <a href="../servicios/servicios.php?proveedor=<?= $proveedor['id'] ?>" class="btn btn-primary btn-sm"
+                                style="text-decoration: none;">
                                 Ver Servicios
                             </a>
                             <?php if(isLoggedIn()): ?>
