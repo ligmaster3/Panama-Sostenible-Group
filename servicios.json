@@ -1,0 +1,80 @@
+{
+    "Experiencias": {
+        "Tours guiados": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        },
+        "Aventuras": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        },
+        "Ecoturismo": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        }
+    },
+    "Alojamientos": {
+        "Hoteles eco": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        },
+        "Lodges": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        },
+        "Camping": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        }
+    },
+    "Gastronomia": {
+        "Restaurantes locales": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        },
+        "Comida tipica": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        },
+        "Mercados": {
+            "nombre": "",
+            "diccion": "",
+            "ubicacion": "",
+            "imagen": "",
+            "calificacion": "",
+            "telefono": ""
+        }
+    }
+}

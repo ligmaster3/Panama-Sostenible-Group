@@ -37,7 +37,7 @@ $serviciosDestacados = getServiciosDestacados($conn);
                     <?php endforeach; ?>
                 </select>
                 <button onclick="buscarServicios()">Buscar</button>
-            </div>
+            </div>          
         </div>
     </section>
 
